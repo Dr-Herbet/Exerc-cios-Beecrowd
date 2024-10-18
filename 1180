@@ -1,0 +1,24 @@
+cont = 0
+val_min = 0
+pos_min = 0
+pos_final = 0
+while cont == 0:
+    Tam_vet = int(input())
+    if 1 < Tam_vet < 1000:
+        cont += 1
+        Vetor = input().replace('', '').split()
+        if len(Vetor) == Tam_vet:
+            for i in Vetor:
+                x = int(i)
+                pos_min += 1
+                if pos_min == 1:
+                    val_min = x
+                    pos_final = pos_min
+                else:
+                    if x < val_min:
+                        val_min = x
+                        pos_final = pos_min
+    else:
+        exit()
+print('Menor valor:', val_min)
+print('Posicao:', (pos_final - 1))
